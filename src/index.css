@@ -19,10 +19,11 @@ html{
 }
 
  h1{
-  font-size: 2rem;
+  font-size: clamp(2rem, 2rem + 1vw, 2.5rem) ;
  }
  p{
-  font-size: 1rem;
+  font-size: clamp(1rem, 1rem + 1vw, 1.5rem) ;
+
  }
  
  .fontBold{
@@ -33,14 +34,14 @@ html{
  }
 
  .container{
-  width: 60%;
+   
   height: 50%;
-  margin: 25% auto;
- 
+  margin: 25vh auto;
+  max-width: 800px;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-
+  justify-content: center;
 
  }
 
@@ -52,21 +53,25 @@ html{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top left;
+  object-position: top center;
     border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
  }
  .right-side{
   width: 60%;
-  padding: 2em;
+ 
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #fff;
+ }
+ article{
+  padding: 2em;
  }
  .footer{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+ 
  }
 
  .footer > div {
@@ -76,8 +81,12 @@ html{
 
  .item1 img{
   border-radius: 100px;
-  width: 4em;
-  height: 4em;
+  width: 5em;
+  height: 5em;
+ }
+ .item2 p{
+  
+  line-height: .5;
  }
 .item3{
   width: 3em;
@@ -104,20 +113,25 @@ html{
   width: 3em;
   height: 3em;
 }
+.share-footer{
+  display: none;
+}
 .follow{
   position: relative;
-  display: inline-block;
+  display: none;
   background-color: hwb(217 28% 58%) ;
   padding: 1.2em;
-  left: 70%;
+  left: 65%;
   bottom: 20%;
   border-radius: 10px;
   text-align: center;
   align-items: center;
+  
 }
 .follow-span{
   margin-right: 1.4em;
   font-weight: 500;
+  color: #fff;
 }
 
 .follow img{
@@ -129,11 +143,11 @@ html{
   border-top: 10px solid hsl(217, 19%, 35%) ;
   border-left: 10px solid transparent ;
   border-right: 10px solid transparent ;
-  left: 40%;
-  bottom: -10px;
-  position: absolute;
+  left: 41%;
+  bottom: -25px;
+  position: relative;
   transform: translateX(-50%);
-  
+  display: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -167,6 +181,47 @@ html{
     border-top-right-radius: 0;
     border-bottom-right-radius: 15px;
   }
+  .footer{
+    display: none;
+  }
+  .follow{
+    display: none;
+  }
+  .footer-follow{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: relative;
+     background-color: hwb(217 28% 58%) ;
+     height: 5rem;
+     padding: 2em;
+     border-top-left-radius: 0;
+     border-bottom-left-radius: 15px;
+     border-top-right-radius: 0;
+     border-bottom-right-radius: 15px;
+  }
+  .follow-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+  }
+  .follow-items img{
+    margin-right: 2em;
+    width: 2.25em;
+    height: 2.25em;
+  }
+  .share-footer{
+    display: inline-block;
+    border-radius: 50px;
+  border: none;
+  width: 3em;
+  height: 3em;
+  background-color: hwb(219 75% 20%) ;
+  color: #fff;
+  }
+ 
+  
 }
 
 @media screen and (min-width: 768px)and (max-width: 1024px) {
@@ -175,27 +230,25 @@ html{
     margin: 0;
   }
   .container{
-    
-   
-
+    margin: 25vh auto; 
+    width: 80%;
+    max-width: 600px;
   }
-  .left-side{
-    width: 100%;
-    height: 40%;
+  .item1 img{
   
-    
+    width: 4em;
+    height: 4em;
+   }
+   .item2 p{
+    font-size: 1.4rem;
+    line-height: .5;
+   }
+  .follow{
+    left: 55%;
+    bottom: 20%;
   }
-  .left-side img{
-    border-top-left-radius: 15px ;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 0;
-  }
-  .right-side{
-    width: 100%;
-    height: 60%;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 15px;
+  .arrow{
+    left: 20%;
+    bottom: -25px;
   }
 }
